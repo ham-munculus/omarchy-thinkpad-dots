@@ -32,8 +32,8 @@ alias cl='clear'
 # ===========================================================
 # functions
 # ===========================================================
-shrc() { (cd ~/.dotfiles/ && nvim .bashrc); }
-resh() { source ~/.dotfiles/.bashrc && echo ".bashrc reloaded" && sleep 0.25 && clear; }
+shrc() { (cd ~/ && chezmoi edit ~/.bashrc); }
+resh() { source ~/.bashrc && echo ".bashrc reloaded" && sleep 0.25 && clear; }
 envrc() {
     if [[ -f .envrc ]]; then
         echo ".envrc exists"
@@ -42,16 +42,9 @@ envrc() {
     fi
 }
 
-# archive-nvim() {
-#     if [[ -d ~/dev/archive/nvim ]]; then
-#         (cp -r ~/.dotfiles/.config/nvim ~/dev/archive/ && cd ~/dev/archive/nvim/ && git add . && git commit -m 'automated commit from archive' && git push origin main && echo "nvim config backed up to ~/dev/archive/")
-#     else
-#         mkdir -p ~/dev/archive && (cp -r ~/.dotfiles/.config/nvim ~/dev/archive/ && cd ~/dev/archive/nvim/ && git add . && git commit -m 'automated commit from archive' && git push origin main && echo "nvim config backed up to ~/dev/archive/")
-#     fi
-# }
 
 archive-nvim() {
-    local src="$HOME/.dotfiles/.config/nvim/"
+    local src="$HOME/.config/nvim/"
     local dst="$HOME/dev/archive/nvim"
 
     # Require that dst is an existing git repo
@@ -95,34 +88,6 @@ archive-nvim() {
 }
 
 
-
-archive-dotfiles() {
-    if [[ -d ~/.dotfiles/ ]]; then
-        (
-            cd ~/.dotfiles || exit 1
-
-            git add .
-
-            changed_files=$(git diff --cached --name-only)
-
-            if [[ -z "$changed_files" ]]; then
-                echo "No changes to commit"
-                exit 0
-            fi
-
-            # turn newlines into commas for the commit
-            changed_files_inline=$(echo "$changed_files" | tr '\n' ',' | sed 's/,$//')
-
-            git commit -m "Automated archiving commit: $changed_files_inline"
-
-            git push origin main
-        )
-
-    else
-        mkdir -p ~/.dotfiles
-        echo ".dotfiles directory created. you need to create github ssh credentials and clone .dotfiles from ham-munculus"
-    fi
-}
 
 lid-reset() {
     (
