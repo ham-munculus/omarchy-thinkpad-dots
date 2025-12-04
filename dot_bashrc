@@ -1,0 +1,148 @@
+# If not running interactively, don't do anything (leave this at the top of this file)
+[[ $- != *i* ]] && return
+
+# All the default Omarchy aliases and functions
+# (don't mess with these directly, just overwrite them here!)
+source ~/.local/share/omarchy/default/bash/rc
+
+open() {
+  xdg-open "$@" >/dev/null 2>&1 &
+}
+
+
+# ===========================================================
+# aliases
+# ===========================================================
+alias p='python'
+# # Directories
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias ls='eza -lh --group-directories-first --git --icons=auto'
+alias lsa='ls -a'
+alias lt='eza --tree --level=2 --long --icons --git'
+alias lta='lt -a'
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
+alias tw='taskwarrior-tui'
+alias tl='task list'
+alias claer='clear'
+alias repo='gh-repo-webapp'
+alias cl='clear'
+
+# ===========================================================
+# functions
+# ===========================================================
+shrc() { (cd ~/.dotfiles/ && nvim .bashrc); }
+resh() { source ~/.dotfiles/.bashrc && echo ".bashrc reloaded" && sleep 0.25 && clear; }
+envrc() {
+    if [[ -f .envrc ]]; then
+        echo ".envrc exists"
+    else
+        echo "source .venv/bin/activate" >>.envrc
+    fi
+}
+
+# archive-nvim() {
+#     if [[ -d ~/dev/archive/nvim ]]; then
+#         (cp -r ~/.dotfiles/.config/nvim ~/dev/archive/ && cd ~/dev/archive/nvim/ && git add . && git commit -m 'automated commit from archive' && git push origin main && echo "nvim config backed up to ~/dev/archive/")
+#     else
+#         mkdir -p ~/dev/archive && (cp -r ~/.dotfiles/.config/nvim ~/dev/archive/ && cd ~/dev/archive/nvim/ && git add . && git commit -m 'automated commit from archive' && git push origin main && echo "nvim config backed up to ~/dev/archive/")
+#     fi
+# }
+
+archive-nvim() {
+    local src="$HOME/.dotfiles/.config/nvim/"
+    local dst="$HOME/dev/archive/nvim"
+
+    # Require that dst is an existing git repo
+    if [[ ! -d "$dst/.git" ]]; then
+        echo "Error: $dst is not a git repository."
+        echo "Set it up first, e.g.:"
+        echo "  mkdir -p ~/dev/archive"
+        echo "  cd ~/dev/archive"
+        echo "  git clone git@github.com:ham-munculus/nvim.git nvim"
+        return 1
+    fi
+
+    # Sync everything except the pack directory and .git
+    rsync -av --delete \
+        --exclude 'pack/' \
+        --exclude '.git/' \
+        "$src" "$dst"
+
+    # Ensure an empty pack directory exists (not synced from src)
+    mkdir -p "$dst/pack"
+
+    (
+        cd "$dst" || exit 1
+
+        git add .
+
+        # If nothing staged, bail out early
+        if git diff --cached --quiet; then
+            echo "No changes to commit in $dst"
+            exit 0
+        fi
+
+        # Build a compact commit message listing changed files
+        changed_files=$(git diff --cached --name-only)
+        changed_files_inline=$(echo "$changed_files" | tr '\n' ',' | sed 's/,$//')
+
+        git commit -m "Automated archiving commit: $changed_files_inline"
+        git push origin main
+        echo "nvim config backed up to $dst"
+    )
+}
+
+
+
+archive-dotfiles() {
+    if [[ -d ~/.dotfiles/ ]]; then
+        (
+            cd ~/.dotfiles || exit 1
+
+            git add .
+
+            changed_files=$(git diff --cached --name-only)
+
+            if [[ -z "$changed_files" ]]; then
+                echo "No changes to commit"
+                exit 0
+            fi
+
+            # turn newlines into commas for the commit
+            changed_files_inline=$(echo "$changed_files" | tr '\n' ',' | sed 's/,$//')
+
+            git commit -m "Automated archiving commit: $changed_files_inline"
+
+            git push origin main
+        )
+
+    else
+        mkdir -p ~/.dotfiles
+        echo ".dotfiles directory created. you need to create github ssh credentials and clone .dotfiles from ham-munculus"
+    fi
+}
+
+lid-reset() {
+    (
+        cd ~/.dotfiles/.config/monitor-auto-switch/acpi/ && sudo ./lid-close.sh
+    )
+}
+
+nvimrc() {
+    (
+        cd ~/.config/nvim
+        n .
+    )
+}
+
+# ===========================================================
+# exports
+# ===========================================================
+export PATH="$HOME/.config/scripts:$PATH"
+
+eval "$(direnv hook bash)"
+# . "$HOME/.local/share/../bin/env"
+# . "$HOME/.cargo/env"
+export PATH="$HOME/.local/bin:$PATH"
