@@ -28,11 +28,12 @@ alias tl='task list'
 alias claer='clear'
 alias repo='gh-repo-webapp'
 alias cl='clear'
+alias dots='chezmoi cd'
 
 # ===========================================================
 # functions
 # ===========================================================
-shrc() { (cd ~/ && chezmoi edit ~/.bashrc); }
+shrc() { ( cd ~/ && chezmoi edit --apply ~/.bashrc ); }
 resh() { source ~/.bashrc && echo ".bashrc reloaded" && sleep 0.25 && clear; }
 envrc() {
     if [[ -f .envrc ]]; then
