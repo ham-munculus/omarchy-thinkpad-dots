@@ -102,6 +102,14 @@ nvimrc() {
 # ===========================================================
 export PATH="$HOME/.config/scripts:$PATH"
 
+# Add private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    case ":$PATH:" in
+        *":$HOME/bin:"*) : ;;  # already in PATH
+        *) PATH="$HOME/bin:$PATH" ;;
+    esac
+fi
+
 eval "$(direnv hook bash)"
 # . "$HOME/.local/share/../bin/env"
 # . "$HOME/.cargo/env"
