@@ -89,12 +89,6 @@ archive-nvim() {
 
 
 
-lid-reset() {
-    (
-        cd ~/.dotfiles/.config/monitor-auto-switch/acpi/ && sudo ./lid-close.sh
-    )
-}
-
 nvimrc() {
     (
         cd ~/.config/nvim
