@@ -33,7 +33,7 @@ alias dots='chezmoi cd'
 # ===========================================================
 # functions
 # ===========================================================
-shrc() { ( cd ~/ && chezmoi edit --apply ~/.bashrc ); }
+shrc() { ( cd /home/andrew/.local/share/chezmoi && n dot_bashrc ); }
 resh() { source ~/.bashrc && echo ".bashrc reloaded" && sleep 0.25 && clear; }
 envrc() {
     if [[ -f .envrc ]]; then
@@ -92,7 +92,7 @@ archive-nvim() {
 
 nvimrc() {
     (
-        cd ~/.config/nvim
+        cd ~/.local/share/chezmoi/dot_config/nvim
         n .
     )
 }

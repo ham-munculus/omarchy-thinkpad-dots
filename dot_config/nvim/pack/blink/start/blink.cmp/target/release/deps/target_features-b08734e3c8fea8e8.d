@@ -1,0 +1,13 @@
+/home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/deps/target_features-b08734e3c8fea8e8.d: /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-features-0.1.6/src/lib.rs /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-features-0.1.6/src/simd.rs /home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/build/target-features-1f566c137bb67c5a/out/generated.md /home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/build/target-features-1f566c137bb67c5a/out/generated.rs /home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/build/target-features-1f566c137bb67c5a/out/docs.rs
+
+/home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/deps/libtarget_features-b08734e3c8fea8e8.rlib: /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-features-0.1.6/src/lib.rs /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-features-0.1.6/src/simd.rs /home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/build/target-features-1f566c137bb67c5a/out/generated.md /home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/build/target-features-1f566c137bb67c5a/out/generated.rs /home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/build/target-features-1f566c137bb67c5a/out/docs.rs
+
+/home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/deps/libtarget_features-b08734e3c8fea8e8.rmeta: /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-features-0.1.6/src/lib.rs /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-features-0.1.6/src/simd.rs /home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/build/target-features-1f566c137bb67c5a/out/generated.md /home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/build/target-features-1f566c137bb67c5a/out/generated.rs /home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/build/target-features-1f566c137bb67c5a/out/docs.rs
+
+/home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-features-0.1.6/src/lib.rs:
+/home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-features-0.1.6/src/simd.rs:
+/home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/build/target-features-1f566c137bb67c5a/out/generated.md:
+/home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/build/target-features-1f566c137bb67c5a/out/generated.rs:
+/home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/build/target-features-1f566c137bb67c5a/out/docs.rs:
+
+# env-dep:OUT_DIR=/home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/build/target-features-1f566c137bb67c5a/out

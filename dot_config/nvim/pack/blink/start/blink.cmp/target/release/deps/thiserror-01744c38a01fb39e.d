@@ -1,0 +1,11 @@
+/home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/deps/thiserror-01744c38a01fb39e.d: /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/lib.rs /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/aserror.rs /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/display.rs /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/provide.rs /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/var.rs
+
+/home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/deps/libthiserror-01744c38a01fb39e.rlib: /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/lib.rs /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/aserror.rs /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/display.rs /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/provide.rs /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/var.rs
+
+/home/andrew/.config/nvim/pack/blink/start/blink.cmp/target/release/deps/libthiserror-01744c38a01fb39e.rmeta: /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/lib.rs /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/aserror.rs /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/display.rs /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/provide.rs /home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/var.rs
+
+/home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/lib.rs:
+/home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/aserror.rs:
+/home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/display.rs:
+/home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/provide.rs:
+/home/andrew/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.16/src/var.rs:
