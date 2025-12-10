@@ -47,6 +47,7 @@ vim.pack.add({
 	{ src = "https://github.com/tahayvr/matteblack.nvim.git", name = "matteblack" }, -- Matte Black
 	{ src = "https://github.com/ellisonleao/gruvbox.nvim.git", name = "gruvbox" }, -- Gruvbox
 	{ src = "https://github.com/bjarneo/hackerman.nvim.git", name = "hackerman" }, -- Hackerman
+	{ src = "https://github.com/bjarneo/aether.nvim.git", name = "aether" }, -- aether
 	{ src = "https://github.com/EdenEast/nightfox.nvim.git", name = "nordfox" }, -- Nord
 	{ src = "https://github.com/ribru17/bamboo.nvim.git", name = "bamboo" }, -- Osaka-jade
 	{ src = "https://github.com/olivercederborg/poimandres.nvim.git", name = "poimandres" }, -- Temerald

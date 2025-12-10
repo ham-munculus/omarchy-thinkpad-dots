@@ -97,6 +97,21 @@ nvimrc() {
     )
 }
 
+
+obsidianvim() {
+    local dir=~/dev/obsidianvim
+    local file="$dir/home.md"
+
+    if [[ -f "$file" ]]; then
+        (cd "$dir" && n home.md)
+    else
+        mkdir -p "$dir"
+        (cd "$dir" && touch home.md && n home.md)
+    fi
+
+}
+
+
 # ===========================================================
 # exports
 # ===========================================================
