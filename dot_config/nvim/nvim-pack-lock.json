@@ -4,6 +4,10 @@
       "rev": "3732756842a2f7e0e76a7b0487e9692072857277",
       "src": "https://github.com/L3MON4D3/LuaSnip"
     },
+    "aether": {
+      "rev": "e4c485f6fea6170fe2da17e87ca98cd25d215cd5",
+      "src": "https://github.com/bjarneo/aether.nvim.git"
+    },
     "ash": {
       "rev": "89c175581ff3ac9761c23dc2ee4f2838fa47bad9",
       "src": "https://github.com/bjarneo/ash.nvim.git"
