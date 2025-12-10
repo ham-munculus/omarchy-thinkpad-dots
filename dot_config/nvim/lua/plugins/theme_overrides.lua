@@ -98,28 +98,49 @@ function M.setup()
 		cs = vim.g.colors_name
 	end
 
- ---------------------------------------------------------------------------
-  -- Bamboo: transparent background when Osaka Jade (bamboo) is active
-  ---------------------------------------------------------------------------
-  if cs == "bamboo" then
-    local ok, bamboo = pcall(require, "bamboo")
-    if ok and bamboo.setup then
-      bamboo.setup({
-        -- Common options for bamboo.nvim (adjust if your fork differs):
-        -- transparent = true is typical; fall back to globals if not
-        transparent = true,
-        dim_inactive = false,
-      })
-    else
-      -- Fallback globals for older versions / forks
-      vim.g.bamboo_transparent = true
-      vim.g.bamboo_dim_inactive = false
-    end
+	---------------------------------------------------------------------------
+	-- Bamboo: transparent background when Osaka Jade (bamboo) is active
+	---------------------------------------------------------------------------
+	if cs == "bamboo" then
+		local ok, bamboo = pcall(require, "bamboo")
+		if ok and bamboo.setup then
+			bamboo.setup({
+				-- Common options for bamboo.nvim (adjust if your fork differs):
+				-- transparent = true is typical; fall back to globals if not
+				transparent = true,
+				dim_inactive = false,
+			})
+		else
+			-- Fallback globals for older versions / forks
+			vim.g.bamboo_transparent = true
+			vim.g.bamboo_dim_inactive = false
+		end
 
-    -- Reapply bamboo with transparent settings
-    pcall(vim.cmd.colorscheme, "bamboo")
-    cs = vim.g.colors_name
-  end
+		-- Reapply bamboo with transparent settings
+		pcall(vim.cmd.colorscheme, "bamboo")
+		cs = vim.g.colors_name
+	end
+
+	---------------------------------------------------------------------------
+	-- Rose Pine: transparent background
+	---------------------------------------------------------------------------
+	if cs == "rose-pine" then
+		local ok, rose_pine = pcall(require, "rose-pine")
+		if ok and rose_pine.setup then
+			rose_pine.setup({
+				styles = {
+					transparency = true,
+				},
+			})
+		else
+			-- if some older fork used globals, you could set them here
+			-- (rose-pine normally doesn't need this)
+		end
+
+		-- Reapply rose-pine to pick up the new settings
+		pcall(vim.cmd.colorscheme, "rose-pine")
+		cs = vim.g.colors_name
+	end
 
 	---------------------------------------------------------------------------
 	-- Optional: enforce transparent backgrounds globally
